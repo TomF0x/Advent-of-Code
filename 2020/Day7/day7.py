@@ -37,3 +37,4 @@ def explore(bagtoexplore):
 
 print([explore(a) for a in list(bags)].count(True))
 
+# Star 2
