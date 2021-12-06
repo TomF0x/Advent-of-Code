@@ -64,5 +64,4 @@ def SecondStar(lst):
                 bits.remove(str(number))
     return int(oxygen, 2)*int(bits[0], 2)
 
-
 print(SecondStar((open("data.txt", "r").read().split("\n"))))
