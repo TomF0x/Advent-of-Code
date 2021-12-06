@@ -1,5 +1,5 @@
 def FirstStar(lst):
-    for _ in range(5):
+    for _ in range(18):
         for i in range(len(lst)):
             if int(lst[i]) > 0:
                 lst[i] = str(int(lst[i])-1)
@@ -13,16 +13,16 @@ FirstStar(open("data.txt", "r").read().split(","))
 
 
 def SecondStar(lst):
-    dic = {str(i): 0 for i in range(-1, 9)}
-    temp = {str(i): 0 for i in range(-1, 9)}
+    dic = {i: 0 for i in range(-1, 9)}
+    temp = {i: 0 for i in range(-1, 9)}
     for number in lst:
-        dic[number] += 1
+        dic[int(number)] += 1
     for _ in range(256):
         for i in range(8, -1, -1):
-            temp[str(i-1)] = dic[str(i)]
-        temp["8"] = temp["-1"]
-        temp["6"] += temp["-1"]
-        temp["-1"] = 0
+            temp[i-1] = dic[i]
+        temp[8] = temp[-1]
+        temp[6] += temp[-1]
+        temp[-1] = 0
         dic = temp.copy()
     print(sum(dic.values()))
 
